@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+
+      <link rel="todo.css">
+    </head>
+    <body>
+      <h1>TO Do Project</h1>
+      <input type="text" id="input-title">
+      <input type="text" id="input-description">
+      <button onclick="addTask()">Add task</button>
+      <ul id="todo-box">
+       
+      </ul>
+      <script>
+      
+        const todolist=[];
+        
+
+        function addTask(){ 
+         let tasktitle= document.getElementById("input-title").value;
+         let taskdescription = document.getElementById("input-description").value;
+         let newtask={
+          id: Date.now(),
+          title:tasktitle,
+          description:taskdescription , 
+          complete:false
+         }
+          todolist.push(newtask);
+          displayTasks();
+        };
+
+
+        function displayTasks(){
+           todolist = document.getElementById("todo-box");
+           todolist.innerHTML='';
+         
+          for(let i=0; i<todolist.length; i++){
+              const li= document.createElement("li");
+              li.innerHTML =`Task:  ${todolist[i].title} Decreption: <p>${todolist[i].description}</p>`;
+          };
+          
+            todolist.appendChild(li);   
+        };
+
+
+        function iscompleted(number){
+           todolist.complete === true;
+        };
+        function delet(number){
+      
+           
+        };
+        function update(number){};
+      </script>
+    </body>
+</html>

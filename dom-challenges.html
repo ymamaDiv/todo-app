@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   
+   <h3 id="count">Score: 0 </h3>
+   <button onclick="increase()"> Increase + </button>
+   <button onclick="decrease()"> Decrese - </button> <br> 
+   <hr> 
+   
+   <p id="movdescresptipn"></p>
+   <hr>
+   
+   <h3 id="multiple"></h3>
+   <hr>
+
+   <h2 id="ticket"></h2>
+   <hr>
+
+   <h4 id="discount"></h4>
+   <h4 id="discount2"></h4>
+   <hr> 
+
+    <textarea name="" id="text"></textarea>
+    <button onclick="textCounter()">count</button>
+    <p id="result"></p>
+    <hr>
+    
+   <script>
+      //Challenge 6: Update Scoreboard
+        let count=0; 
+
+        function increase() {
+            count++;
+            document.getElementById("count").innerHTML =` Score: ${count}`;
+        }
+        function decrease(){
+          count--;
+          document.getElementById("count").innerHTML=`Score: ${count}` ;
+        }
+     //Challenge 4: Favorite Movie
+     
+        const movie = {
+          title : "Inception" , 
+          director : "Christopher Nolan" ,
+          releaseYear : "2010" ,
+          rating : 4} ; 
+
+          document.getElementById("movdescresptipn").innerHTML = 
+          ` ${movie.title} was directed by: ${movie.director} and released in ${movie.releaseYear}`;
+
+     //Challenge 8: Multiplication Table
+        let output = " ";
+        
+        
+          for(let i=1; i<=10; i++){
+           
+            output+= `5 × ${i} = ${5 * i} <br>`;
+          document.getElementById("multiple").innerHTML = 
+              ` ${output}  `; 
+          }; 
+      //Challenge 3: Movie Ticket
+        let age = 18; 
+        if(age<13){
+          document.getElementById("ticket").innerHTML= `Age ${age} years, Child Ticket`;
+        }else if (age>=13 && age<=17){
+          document.getElementById("ticket").innerHTML= `Age ${age} years, Teen Ticket`;
+        } else{
+          document.getElementById("ticket").innerHTML= `Age ${age} years, Adult Ticket`;
+        }; 
+
+    //Challenge 5: Discount Calculator
+       function calculateDiscount(price,discountPercentage){
+      return `The final price after discount ${discountPercentage}% is ${ price - price *(discountPercentage/100)} SR `; 
+     };
+     document.getElementById("discount").innerHTML = calculateDiscount(100, 80);
+
+     document.getElementById("discount2").innerHTML = calculateDiscount(300,40);
+
+    //Challenge 2: Character Counter
+      function textCounter(){
+        let text= document.getElementById("text").value;
+        document.getElementById("result").innerHTML=`Characters: ${text.length}`;
+      };
+
+    
+   
+    
+    
+    
+   </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+     
+      <link rel="stylesheet" href="main.css">
+      
+    </head>
+    <body>
+      <div class="input-area">
+          <h1>TO Do Project</h1>
+
+        <div class="field">
+              <label for="input-title">Enter The Task Title</label>
+              <input type="text" id="input-title" class="input-box">
+        </div>
+        <div class="field">
+              <label for="input-description">Enter The Task Description</label>
+              <input type="text" id="input-description" class="input-box">
+        </div>
+
+          <button onclick="addTask()" class="btn-style">Add task</button>
+      </div>
+      <ul id="todo-box" class="todo-box">
+      </ul>
+       <script src="main.js"></script>
+    </body>
+</html>
